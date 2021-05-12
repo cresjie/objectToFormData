@@ -4,7 +4,7 @@ transforms object into FormData. Very useful especially for uploading files with
 
 # Install
 ```sh
-npm install object-to-form-data
+npm install @cresjie/object-to-form-data
 ```
 
 # API
@@ -14,7 +14,7 @@ objectToFormData(object)
 
 # Usage
 ```javascript
-import {objectToFormData} from 'objectToFormData'; //for node module
+import  objectToFormData  from '@cresjie/object-to-form-data'; //for node module
 
 var obj = {
 	/** key-value pair **/

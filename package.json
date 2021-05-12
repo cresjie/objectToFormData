@@ -1,6 +1,6 @@
 {
-  "name": "object-to-form-data",
-  "version": "1.0.0",
+  "name": "@cresjie/object-to-form-data",
+  "version": "1.0.1",
   "description": "transforms object into FormData. Very useful especially for uploading files with data. Very lightweight: less than 1kb",
   "main": "objectToFormData.min.js",
   "scripts": {
