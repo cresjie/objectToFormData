@@ -1,0 +1,29 @@
+{
+  "name": "object-to-form-data",
+  "version": "1.0.0",
+  "description": "transforms object into FormData. Very useful especially for uploading files with data. Very lightweight: less than 1kb",
+  "main": "objectToFormData.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "terser --compress --mangle --output objectToFormData.min.js objectToFormData.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cresjie/objectToFormData.git"
+  },
+  "keywords": [
+    "object to formdata",
+    "file upload",
+    "form",
+    "formdata"
+  ],
+  "author": "Cres Jie Labasano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cresjie/objectToFormData/issues"
+  },
+  "homepage": "https://github.com/cresjie/objectToFormData#readme",
+  "dependencies": {
+    "terser": "^5.7.0"
+  }
+}
