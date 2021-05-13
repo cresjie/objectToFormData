@@ -1,6 +1,6 @@
 {
   "name": "@cresjie/object-to-form-data",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "transforms object into FormData. Very useful especially for uploading files with data. Very lightweight: less than 1kb",
   "main": "objectToFormData.min.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/cresjie/objectToFormData/issues"
   },
   "homepage": "https://github.com/cresjie/objectToFormData#readme",
-  "dependencies": {
+  "devDependencies": {
     "terser": "^5.7.0"
   }
 }
