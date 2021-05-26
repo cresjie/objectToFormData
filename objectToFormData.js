@@ -7,21 +7,38 @@
 
 })(this, function(global){
 
-	 function appendFormdata(formdata, data, name){
-		name = name || '';
-	    if (data && (data.constructor == Object || data.constructor == Array) ){
-	    	for(var index in data) {
+	function isArray(d) {
+		return Array.isArray(d)
+	}
 
-	    		appendFormdata(formdata, data[index], name == '' ? index : name + '['+index+']' ); 
-	    		
+	function isObject(d){
+		return Object(d) === d
+	}
+
+	function appendFormdata(formdata, data, name){
+		name = name || '';
+	    if (data && ( isObject(data) ||  isArray(data) ) ){
+
+
+	    	var keyCount = 	(isObject(data) ? Object.keys(data) : data).length;
+	    	if (!keyCount) {
+	    		formdata.append(name, '');
+	    	} else {
+	    		for(var index in data) {
+
+		    		appendFormdata(formdata, data[index], name == '' ? index : name + '['+index+']' ); 
+		    		
+		    	}
 	    	}
+
+	    	
 	       
 	    } else {
 
 	    	formdata.append(name, data == null || data == undefined ? '' : 
 
-	    		data.constructor == Boolean ? Number(data) : 
-	    		data.constructor == Date ? data.toISOString() :
+	    		typeof value == 'boolean' ? Number(data) : 
+	    		data instanceof Date? data.toISOString() :
 	    		data
 	    	);
 	    }
