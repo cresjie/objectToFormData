@@ -35,7 +35,7 @@
 
 	    	var keyCount = 	(isObject(data) ? Object.keys(data) : data).length;
 	    	if (!keyCount) {
-	    		formdata.append(name, 'ss');
+	    		formdata.append(name, '');
 	    	} else {
 	    		for(var index in data) {
 
@@ -47,10 +47,10 @@
 	    	
 	       
 	    } else {
-
+	    	
 	    	formdata.append(name, data == null || data == undefined ? '' : 
 
-	    		typeof value == 'boolean' ? Number(data) : 
+	    		typeof data == 'boolean' ? Number(data) : 
 	    		data instanceof Date? data.toISOString() :
 	    		data
 	    	);
