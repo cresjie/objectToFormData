@@ -15,14 +15,27 @@
 		return Object(d) === d
 	}
 
+	function isBlob(value) {
+		return value && typeof value.size === 'number' &&
+			  typeof value.type === 'string' &&
+			  typeof value.slice === 'function';
+	}
+
+	function isFile(value) {
+		return isBlob(value) &&
+			  typeof value.name === 'string' &&
+			  (typeof value.lastModifiedDate === 'object' ||
+			    typeof value.lastModified === 'number');
+	}
+
 	function appendFormdata(formdata, data, name){
 		name = name || '';
-	    if (data && ( isObject(data) ||  isArray(data) ) ){
+	    if (data && ( isObject(data) ||  isArray(data) ) && !isFile(data) ){
 
 
 	    	var keyCount = 	(isObject(data) ? Object.keys(data) : data).length;
 	    	if (!keyCount) {
-	    		formdata.append(name, '');
+	    		formdata.append(name, 'ss');
 	    	} else {
 	    		for(var index in data) {
 
